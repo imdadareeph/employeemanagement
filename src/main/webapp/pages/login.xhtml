@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Employeemanagement</title>
+	
+		<link rel="stylesheet"
+			href="#{facesContext.externalContext.requestContextPath}/css/app.css"
+			type="text/css" />	
+		<link rel="stylesheet"
+			href="#{facesContext.externalContext.requestContextPath}/css/fa/css/font-awesome.css"
+			type="text/css" />	
+		<link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/bootstrap.css" media="screen" />
+		
+</h:head>
+<h:body>
+<div class="container">
+	<div style="height: 15vh;"></div>
+	<div class=" container-logo ">
+		<img src="#{facesContext.externalContext.requestContextPath}/img/headerlogo.png" class="responsive-image" />
+	</div>
+	<h:form id="loginForm">     
+	<div class="container-login">
+		<div class="login-block">
+			<h1>Login</h1>
+			     
+            <p:growl id="msg" showDetail="true" life="3000" />
+			 <p:inputText id="username" value="#{loginBean.uname}" placeholder="Username"></p:inputText>
+ 			 <p:password id="password" value="#{loginBean.password}" placeholder="Password" feedback="false"></p:password>
+			<p:commandButton action="#{loginBean.login}" value="Login" update=":loginForm,msg,:form1" ajax="true"></p:commandButton>
+			
+			
+		</div>
+	</div>
+	</h:form>
+	<div class="contentstyle">
+		
+		<h:form id="form1">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+
+		</h:form>
+	</div>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,183 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Employeemanagement</title>
+</h:head>
+<h:body>
+
+	<ui:include src="templates/header.xhtml"></ui:include>
+	<div class="contentstyle">
+		
+		<h:form id="form1">
+		<p:messages id="messages" autoUpdate="false" closable="true" />
+
+			<h:panelGrid columns="1" cellpadding="5">
+
+				<p:commandButton value="Add" type="button"
+					onclick="PF('dlg2').show();" />
+
+			</h:panelGrid>
+
+
+
+			<p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true"
+				height="300" width="600">
+				<table>
+					<!-- <tr>
+						<td><h:outputLabel for="id" value="Id : " /></td>
+						<td><p:inputText id="id" value="#{entityBBean.id}"
+								disabled="true">
+								<f:converter converterId="javax.faces.Integer" />
+								<p:ajax event="blur" update="messages" />
+							</p:inputText></td>
+					</tr> -->
+					<tr>
+						<td><h:outputLabel for="name" value="Name : " /></td>
+						<td>
+							<p:inputText id="name" value="#{entityBBean.name}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="messages" />
+							</p:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="mobilenum" value="Mobile : " /></td>
+						<td>
+							<p:inputText id="mobilenum" value="#{entityBBean.mobile}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="messages" />
+							</p:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="addressname" value="Address : " /></td>
+						<td>
+							<p:inputText id="addressname" value="#{entityBBean.address}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="messages" />
+							</p:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="nationalityid" value="Nationality : " /></td>
+						<td>
+							<p:inputText id="nationalityid" value="#{entityBBean.nationality}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="messages" />
+							</p:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="usernameid" value="username : " /></td>
+						<td>
+							<p:inputText id="usernameid" value="#{entityBBean.username}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="messages" />
+							</p:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="passwordid" value="password : " /></td>
+						<td>
+							<p:password id="passwordid" value="#{entityBBean.password}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="messages" />
+							</p:password>
+						</td>
+					</tr>
+					<tr>
+						<td><p:commandButton id="addUser" value="Add"
+								actionListener="#{entityBBean.addEntity}" ajax="false"
+								update=":entities" /></td>
+					</tr>
+				</table>
+			</p:dialog>
+
+			
+		
+		Employee Records:
+		
+		<p:dataTable id="entities" var="entity"
+				value="#{entityBBean.entityList}" style="width: 100%" editable="true"
+				rows="3" paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="3,6,9">
+
+				<p:ajax event="rowEdit" listener="#{entityBBean.onRowEdit}"
+					update=":form1:entities:modelcconName " />
+
+				<p:column headerText="id">
+					<h:outputText value="#{entity.id}" />
+				</p:column>
+				<p:column headerText="Name">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{entity.name}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="modelcconName" value="#{entity.name}" size="10"
+								style="width:300px;" required="true" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="mobile">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{entity.mobile}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="mobile" value="#{entity.mobile}" size="10"
+								style="width:300px;" required="true" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				
+				<p:column headerText="address">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{entity.address}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="address" value="#{entity.address}" size="10"
+								style="width:600px;" required="true" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				
+				<p:column headerText="nationality">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{entity.nationality}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="nationality" value="#{entity.nationality}" size="10"
+								style="width:300px;" required="true" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Username">
+					<h:outputText value="#{entity.username}" />
+				</p:column>
+				<p:column headerText="Password">
+					<h:outputText value="#{entity.password}" />
+				</p:column>
+				
+				<p:column headerText="Action" style="width:100px">
+					<p:rowEditor />
+				</p:column>
+
+				<p:column headerText="delete" style="width:100px">
+					<p:commandButton value="Delete" id="ajax"
+						actionListener="#{entityBBean.deleteAction(entity)}"
+						styleClass="ui-priority-primary" update=":form1:entities"></p:commandButton>
+				</p:column>
+
+
+			</p:dataTable>
+
+
+		</h:form>
+	</div>
+</h:body>
+</html>
