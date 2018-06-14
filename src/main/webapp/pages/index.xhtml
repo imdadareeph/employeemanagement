@@ -5,6 +5,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>Employeemanagement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </h:head>
 <h:body>
 
@@ -99,10 +100,10 @@
 			
 		
 		Employee Records:
-		
+		<div class="col-auto">
 		<p:dataTable id="entities" var="entity"
 				value="#{entityBBean.entityList}" style="width: 100%" editable="true"
-				rows="3" paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="3,6,9">
+				rows="3" reflow="true" paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="3,6,9">
 
 				<p:ajax event="rowEdit" listener="#{entityBBean.onRowEdit}"
 					update=":form1:entities:modelcconName " />
@@ -175,7 +176,7 @@
 
 
 			</p:dataTable>
-
+			</div>
 
 		</h:form>
 	</div>

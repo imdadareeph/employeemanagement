@@ -7,6 +7,7 @@
 	<h:head>
 		<f:facet name="first">
 			<meta http-equiv="X-UA-Compatible" content="IE=9" />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<meta http-equiv="Content-Type"
 				content="text/html; charset=ISO-8859-1" />
 			<title>app</title>
@@ -40,8 +41,11 @@ top: 0px !important;
 }
 </style>
 		<link rel="stylesheet"
-			href="#{facesContext.externalContext.requestContextPath}/css/primefacescssoverridden.css"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
 			type="text/css" />
+		<!--<link rel="stylesheet"
+			href="#{facesContext.externalContext.requestContextPath}/css/primefacescssoverridden.css"
+			type="text/css" /> -->
 		<link rel="stylesheet"
 			href="#{facesContext.externalContext.requestContextPath}/css/app.css"
 			type="text/css" />	
@@ -49,32 +53,46 @@ top: 0px !important;
 			href="#{facesContext.externalContext.requestContextPath}/css/fa/css/font-awesome.css"
 			type="text/css" />	
 		<link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/bootstrap.css" media="screen" />
-		 
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	</h:head>
 	<h:body>
 	<h:form id="form2">
-	<div class="navbar navbar-default navbar-fixed-top">
+    <!--NAVBAR-START-->
+	<nav class="navbar navbar-expand-lg navbar-default navbar-dark sticky-top"> <!-- style="background-color: #333333 !important;" -->
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="/">Employee Management</a>
+
+		<div class="navbar-collapse collapse" id="navbarTogglerDemo03" style="">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+           <li class="nav-item active">
+	        <a class="nav-link" href="/pages/index.jsf">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	       <li class="nav-item ">
+	        <a class="nav-link" href="#{facesContext.externalContext.requestContextPath}/doc/documentation.pdf" target="_blank">Documentation</a>
+	      </li>
+	      <li class="nav-item">
+	        <h:commandLink styleClass="nav-link" action="#{loginBean.logouttrue}">  <h:outputText value="logout" /> </h:commandLink>
+	      </li>
+	     
+	    </ul></form>
+	  </div>
+	</nav>
+	<!--NAVBAR-END-->
 	
-		<div class="container">
-			<div class="navbar-header">
-				<a href="/" class="navbar-brand" style="font-size: xx-large;">Employee Management</a>
-			</div>
-			<div class="navbar-collapse collapse" id="navbar-main">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#{facesContext.externalContext.requestContextPath}/doc/documentation.pdf" target="_blank">Documentation</a></li>
-					<li><h:commandLink action="#{loginBean.logouttrue}">  <h:outputText value="logout" /> </h:commandLink></li>
-				</ul>
-				
-			</div>
-		</div>
-	</div>
 	<!-- <table width="100%" class="ui-widget ui-widget-content" border="0"> 
 		<tr>
 			<td align="center" width="100%" style="margin-left: 250px;">
 			<img src="#{facesContext.externalContext.requestContextPath}/img/headerlogo.png"/>
 			</td>
 		</tr>
-	</table> -->
+	</table> 
 	<p:tabMenu activeIndex="#{param.i}" styleClass="head">
 		<p:menuitem  value="Home"  style="float:right;" outcome="#{navigationBean.navigateTo}"
 			icon="ui-icon-home">
@@ -82,7 +100,7 @@ top: 0px !important;
 		</p:menuitem>
 			
 	</p:tabMenu>
-	
+	-->
 	</h:form>
 	</h:body>
 </ui:composition>
