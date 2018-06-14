@@ -3,6 +3,14 @@ html, body {
   margin: 0;
 }
 
+.top1px{
+top: 70px !important;
+}
+body {
+    background: url(https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-10-full.jpg);
+    background-size: cover;
+}
+
 
 /*image start*/
 .responsive-image{
@@ -72,7 +80,8 @@ and finally, we serve for every view-port the right image:
     padding: 20px;
     margin: auto;
     width: 75%;
-    background: #403c3cd1;
+    background: #403c3c;
+    border: 5px solid #ff656c;
     border-radius: 5px;
     border-top: 5px solid #ff656c;
     margin: 0 auto;
