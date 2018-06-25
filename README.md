@@ -25,6 +25,9 @@ System	&	technology	used:
 11. pom.xml	file	contains	all	the	dependencies	(as	it’s	a	maven	project)
 
 
+# Documents
+[DOCUMENT-URL](http://www.imdadareeph.com/employeemanagement/src/main/webapp/doc/documentation.pdf)
+
 ## Preview
 
 This is the Preview section
