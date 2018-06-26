@@ -1,7 +1,7 @@
 # employeemanagement
 Employee management system- JSF Primefaces Spring hibernate JPA
 
-[DEMO-URL](http://employeemanagement.j.layershift.co.uk/)
+[DEMO-URL](https://secret-mesa-13760.herokuapp.com/)
 
 
 # Overview
@@ -24,9 +24,11 @@ System	&	technology	used:
 10. H2	database	(in-memory)	(also	MySQL	configurations	available	– currently	commented	out)
 11. pom.xml	file	contains	all	the	dependencies	(as	it’s	a	maven	project)
 
+# Credentials
+Username : admin Password : admin
 
 # Documents
-[DOCUMENT-URL](http://www.imdadareeph.com/employeemanagement/src/main/webapp/doc/documentation.pdf)
+[DOCUMENT-URL](https://secret-mesa-13760.herokuapp.com/doc/documentation.pdf)
 
 ## Preview
 
