@@ -34,9 +34,11 @@
 				<value>com.app.employeemanagement.model.Entity</value>
 			</list>
 		</property>
+		<!-- <property name="javax.persistence.validation.mode" value="none"/> -->
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.connection.pool_size">10</prop>
 				<prop key="show_sql">true</prop>
