@@ -34,9 +34,9 @@ Username : admin Password : admin
 
 This is the Preview section
 
-![alt text](http://i68.tinypic.com/2sbmxyw.jpg "preview1")
+![alt text](https://raw.githubusercontent.com/imdadareeph/employeemanagement/master/src/main/resources/screenshots/1.png "preview1")
 
-![alt text](http://i63.tinypic.com/708d45.jpg "preview2")
+![alt text](https://raw.githubusercontent.com/imdadareeph/employeemanagement/master/src/main/resources/screenshots/2.png "preview2")
 
-![alt text](http://i68.tinypic.com/rir8ko.jpg "preview3")
+![alt text](https://raw.githubusercontent.com/imdadareeph/employeemanagement/master/src/main/resources/screenshots/3.png "preview3")
 
